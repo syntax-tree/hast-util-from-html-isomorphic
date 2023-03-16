@@ -1,7 +1,7 @@
 {
   "name": "hast-util-from-html-isomorphic",
   "version": "0.0.0",
-  "description": "hast utility that turns HTML into a syntax tree",
+  "description": "hast utility that turns HTML into a syntax tree (while being small in browsers)",
   "license": "MIT",
   "keywords": [
     "unist",
