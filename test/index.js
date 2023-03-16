@@ -2,7 +2,6 @@ import assert from 'node:assert/strict'
 import {test} from 'node:test'
 
 import {JSDOM} from 'jsdom'
-import {removePosition} from 'unist-util-remove-position'
 
 const jsdom = new JSDOM()
 globalThis.document = jsdom.window.document
@@ -14,8 +13,6 @@ const {fromHtmlIsomorphic} = await import('hast-util-from-html-isomorphic')
 test('parse document', () => {
   const html = '<html><head></head><body></body></html>'
   const tree = fromHtmlIsomorphic(html)
-  removePosition(tree, {force: true})
-  delete tree.data
 
   assert.deepEqual(tree, {
     children: [
@@ -46,8 +43,6 @@ test('parse document', () => {
 test('parse single element fragment', () => {
   const html = '<div><p></p></div>'
   const tree = fromHtmlIsomorphic(html, {fragment: true})
-  removePosition(tree, {force: true})
-  delete tree.data
 
   assert.deepEqual(tree, {
     children: [
@@ -72,8 +67,6 @@ test('parse single element fragment', () => {
 test('parse multi element fragment', () => {
   const html = '<p></p><div></div>'
   const tree = fromHtmlIsomorphic(html, {fragment: true})
-  removePosition(tree, {force: true})
-  delete tree.data
 
   assert.deepEqual(tree, {
     children: [
