@@ -9,11 +9,11 @@ globalThis.document = jsdom.window.document
 globalThis.DOMParser = jsdom.window.DOMParser
 
 // We use a dynamic import, so we can configure jsdom before we load the module.
-const {fromHtml} = await import('hast-util-from-html-isomorphic')
+const {fromHtmlIsomorphic} = await import('hast-util-from-html-isomorphic')
 
 test('parse document', () => {
   const html = '<html><head></head><body></body></html>'
-  const tree = fromHtml(html)
+  const tree = fromHtmlIsomorphic(html)
   removePosition(tree, {force: true})
   delete tree.data
 
@@ -45,7 +45,7 @@ test('parse document', () => {
 
 test('parse single element fragment', () => {
   const html = '<div><p></p></div>'
-  const tree = fromHtml(html, {fragment: true})
+  const tree = fromHtmlIsomorphic(html, {fragment: true})
   removePosition(tree, {force: true})
   delete tree.data
 
@@ -71,7 +71,7 @@ test('parse single element fragment', () => {
 
 test('parse multi element fragment', () => {
   const html = '<p></p><div></div>'
-  const tree = fromHtml(html, {fragment: true})
+  const tree = fromHtmlIsomorphic(html, {fragment: true})
   removePosition(tree, {force: true})
   delete tree.data
 

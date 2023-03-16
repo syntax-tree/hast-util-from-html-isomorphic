@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`fromHtml(value[, options])`](#fromhtmlvalue-options)
+    *   [`fromHtmlIsomorphic(value[, options])`](#fromhtmlisomorphicvalue-options)
     *   [`Options`](#options)
 *   [Examples](#examples)
     *   [Example: fragment versus document](#example-fragment-versus-document)
@@ -64,23 +64,23 @@ npm install hast-util-from-html-isomorphic
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {fromHtml} from "https://esm.sh/hast-util-from-html-isomorphic@1"
+import {fromHtmlIsomorphic} from "https://esm.sh/hast-util-from-html-isomorphic@1"
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {fromHtml} from "https://esm.sh/hast-util-from-html-isomorphic@1?bundle"
+  import {fromHtmlIsomorphic} from "https://esm.sh/hast-util-from-html-isomorphic@1?bundle"
 </script>
 ```
 
 ## Use
 
 ```js
-import {fromHtml} from 'hast-util-from-html-isomorphic'
+import {fromHtmlIsomorphic} from 'hast-util-from-html-isomorphic'
 
-const tree = fromHtml('<h1>Hello, world!</h1>', {fragment: true})
+const tree = fromHtmlIsomorphic('<h1>Hello, world!</h1>', {fragment: true})
 
 console.log(tree)
 ```
@@ -104,10 +104,10 @@ Yields (positional info and data omitted for brevity):
 
 ## API
 
-This package exports the identifier [`fromHtml`][fromhtml].
+This package exports the identifier [`fromHtmlIsomorphic`][fromhtmlisomorphic].
 There is no default export.
 
-### `fromHtml(value[, options])`
+### `fromHtmlIsomorphic(value[, options])`
 
 Turn serialized HTML into a hast tree.
 
@@ -291,7 +291,7 @@ abide by its terms.
 
 [xast-util-from-xml]: https://github.com/syntax-tree/xast-util-from-xml
 
-[fromhtml]: #fromhtmlvalue-options
+[fromhtmlisomorphic]: #fromhtmlisomorphicvalue-options
 
 [options]: #options
 
