@@ -27,6 +27,8 @@
   "type": "module",
   "exports": {
     ".": {
+      "deno": "./index.js",
+      "react-native": "./index.js",
       "worker": "./index.js",
       "browser": "./lib/browser.js",
       "default": "./index.js"
