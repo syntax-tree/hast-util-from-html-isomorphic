@@ -59,9 +59,9 @@
     "prepack": "npm run build && npm run format",
     "build": "tsc --build --clean && tsc --build && type-coverage",
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "test-browser": "node --conditions development --conditions browser --test",
-    "test-node": "node --conditions development --test",
-    "test-worker": "node --conditions development --conditions worker --test",
+    "test-browser": "node --conditions development --conditions browser test/index.js",
+    "test-node": "node --conditions development test/index.js",
+    "test-worker": "node --conditions development --conditions worker test/index.js",
     "test-api": "npm run test-browser && npm run test-node && npm run test-worker",
     "test-coverage": "c8 --check-coverage --100 --reporter lcov npm run test-api",
     "test": "npm run build && npm run format && npm run test-coverage"
