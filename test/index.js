@@ -1,14 +1,7 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 
-import {JSDOM} from 'jsdom'
-
-const jsdom = new JSDOM()
-globalThis.document = jsdom.window.document
-globalThis.DOMParser = jsdom.window.DOMParser
-
-// We use a dynamic import, so we can configure jsdom before we load the module.
-const {fromHtmlIsomorphic} = await import('hast-util-from-html-isomorphic')
+import {fromHtmlIsomorphic} from 'hast-util-from-html-isomorphic'
 
 test('parse document', () => {
   const html = '<html><head></head><body></body></html>'

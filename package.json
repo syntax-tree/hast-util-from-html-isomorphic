@@ -61,7 +61,7 @@
     "prepack": "npm run build && npm run format",
     "build": "tsc --build --clean && tsc --build && type-coverage",
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "test-browser": "node --conditions development --conditions browser test/index.js",
+    "test-browser": "node --conditions development --conditions browser -r ./test/dom.cjs test/index.js",
     "test-node": "node --conditions development test/index.js",
     "test-worker": "node --conditions development --conditions worker test/index.js",
     "test-api": "npm run test-browser && npm run test-node && npm run test-worker",
