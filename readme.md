@@ -286,6 +286,8 @@ abide by its terms.
 
 [hast-util-from-html]: https://github.com/syntax-tree/hast-util-from-html
 
+[hast-util-to-dom]: https://github.com/syntax-tree/hast-util-to-dom
+
 [hast-util-to-html]: https://github.com/syntax-tree/hast-util-to-html
 
 [xast-util-from-xml]: https://github.com/syntax-tree/xast-util-from-xml
