@@ -79,13 +79,12 @@
   "xo": {
     "prettier": true,
     "env": [
-      "es2021",
       "browser"
     ]
   },
   "remarkConfig": {
     "plugins": [
-      "preset-wooorm",
+      "remark-preset-wooorm",
       [
         "remark-lint-no-html",
         false
