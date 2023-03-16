@@ -8,7 +8,8 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[hast][] utility that turns HTML into a syntax tree.
+[hast][] utility that turns HTML into a syntax tree, using browser APIs
+when available, so it has a smaller bundle size there.
 
 ## Contents
 
