@@ -35,28 +35,29 @@ when available, so it has a smaller bundle size there.
 This package is a utility that takes HTML input and turns it into a hast syntax
 tree.
 
-When running in a browser, this uses [`hast-util-from-dom`][hast-util-from-dom],
-otherwise this uses [`hast-util-from-html`][hast-util-from-html].
+In a browser, this uses [`hast-util-from-dom`][hast-util-from-dom],
+otherwise it uses [`hast-util-from-html`][hast-util-from-html].
 
 ## When should I use this?
 
-If you want to handle syntax trees manually in isomorphic code and care about
-bundle size, use this.
+If you want to get a syntax tree without positional info, and your code should
+be isomorphic (it could run anywhere), as it results in a smaller bundle size.
 
-If you want to use positional information, use
+If you need positional information, use
 [`hast-util-from-html`][hast-util-from-html].
 
-If you don’t care about positional information, and your code will only run in
-the browser, use [`hast-util-from-dom`][hast-util-from-dom].
+If you don’t care about positional info and your code only runs in browsers,
+use [`hast-util-from-dom`][hast-util-from-dom].
 
-Finally you can use the utility [`hast-util-to-html`][hast-util-to-html] to do
-the inverse of this utility.
-It turns hast into HTML.
+Finally you can use the utility [`hast-util-to-html`][hast-util-to-html],
+or [`hast-util-to-dom`][hast-util-to-dom] with `.outerHTML`, to do the inverse
+of this utility.
+That turns hast into HTML.
 
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+ and 16.0+), install with [npm][]:
+In Node.js (version 16.0+), install with [npm][]:
 
 ```sh
 npm install hast-util-from-html-isomorphic
@@ -97,7 +98,6 @@ Yields (positional info and data omitted for brevity):
       tagName: 'h1',
       properties: {},
       children: [Array],
-      position: [Object]
     }
   ]
 }
@@ -114,8 +114,6 @@ Turn serialized HTML into a hast tree.
 
 ###### Parameters
 
-<!-- To do: update link when `vfile` has new docs. -->
-
 *   `value` ([`Compatible`][compatible])
     — serialized HTML to parse
 *   `options` ([`Options`][options], optional)
@@ -131,7 +129,7 @@ Configuration (TypeScript type).
 
 ##### Fields
 
-###### `options.fragment`
+###### `fragment`
 
 Whether to parse as a fragment (`boolean`, default: `false`).
 The default is to expect a whole document.
@@ -192,7 +190,7 @@ It exports the additional type [`Options`][options].
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
+As of now, that is Node.js 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
