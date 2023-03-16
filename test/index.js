@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
-
 import {fromHtmlIsomorphic} from 'hast-util-from-html-isomorphic'
 
 test('parse document', () => {
