@@ -7,28 +7,28 @@ test('parse document', () => {
   const tree = fromHtmlIsomorphic(html)
 
   assert.deepEqual(tree, {
+    type: 'root',
     children: [
       {
+        type: 'element',
+        tagName: 'html',
+        properties: {},
         children: [
           {
-            children: [],
-            properties: {},
+            type: 'element',
             tagName: 'head',
-            type: 'element'
+            properties: {},
+            children: []
           },
           {
-            children: [],
-            properties: {},
+            type: 'element',
             tagName: 'body',
-            type: 'element'
+            properties: {},
+            children: []
           }
-        ],
-        properties: {},
-        tagName: 'html',
-        type: 'element'
+        ]
       }
-    ],
-    type: 'root'
+    ]
   })
 })
 
@@ -37,22 +37,22 @@ test('parse single element fragment', () => {
   const tree = fromHtmlIsomorphic(html, {fragment: true})
 
   assert.deepEqual(tree, {
+    type: 'root',
     children: [
       {
+        type: 'element',
+        tagName: 'div',
+        properties: {},
         children: [
           {
-            children: [],
-            properties: {},
+            type: 'element',
             tagName: 'p',
-            type: 'element'
+            properties: {},
+            children: []
           }
-        ],
-        properties: {},
-        tagName: 'div',
-        type: 'element'
+        ]
       }
-    ],
-    type: 'root'
+    ]
   })
 })
 
@@ -61,20 +61,20 @@ test('parse multi element fragment', () => {
   const tree = fromHtmlIsomorphic(html, {fragment: true})
 
   assert.deepEqual(tree, {
+    type: 'root',
     children: [
       {
-        children: [],
-        properties: {},
+        type: 'element',
         tagName: 'p',
-        type: 'element'
+        children: [],
+        properties: {}
       },
       {
-        children: [],
-        properties: {},
+        type: 'element',
         tagName: 'div',
-        type: 'element'
+        properties: {},
+        children: []
       }
-    ],
-    type: 'root'
+    ]
   })
 })
