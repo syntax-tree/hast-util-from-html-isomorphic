@@ -40,10 +40,10 @@
     "index.js"
   ],
   "dependencies": {
-    "@types/hast": "^2.0.0",
-    "hast-util-from-html": "^1.0.0",
-    "hast-util-from-dom": "^4.0.0",
-    "unist-util-remove-position": "^4.0.0"
+    "@types/hast": "^3.0.0",
+    "hast-util-from-html": "^2.0.0",
+    "hast-util-from-dom": "^5.0.0",
+    "unist-util-remove-position": "^5.0.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.0.0",
