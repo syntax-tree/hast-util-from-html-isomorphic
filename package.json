@@ -65,22 +65,16 @@
     "test-node": "node --conditions development test/index.js",
     "test-worker": "node --conditions development --conditions worker test/index.js",
     "test-api": "npm run test-browser && npm run test-node && npm run test-worker",
-    "test-coverage": "c8 --check-coverage --100 --reporter lcov npm run test-api",
+    "test-coverage": "c8 --100 --reporter lcov npm run test-api",
     "test": "npm run build && npm run format && npm run test-coverage"
   },
   "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": true,
     "bracketSpacing": false,
     "semi": false,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "prettier": true,
-    "env": [
-      "browser"
-    ]
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
   },
   "remarkConfig": {
     "plugins": [
@@ -94,6 +88,13 @@
   "typeCoverage": {
     "atLeast": 100,
     "detail": true,
+    "ignoreCatch": true,
     "strict": true
+  },
+  "xo": {
+    "env": [
+      "browser"
+    ],
+    "prettier": true
   }
 }
