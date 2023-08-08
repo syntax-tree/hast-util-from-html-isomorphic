@@ -47,20 +47,20 @@
   },
   "devDependencies": {
     "@types/jsdom": "^21.0.0",
-    "@types/node": "^18.0.0",
-    "c8": "^7.0.0",
-    "jsdom": "^21.0.0",
-    "prettier": "^2.0.0",
+    "@types/node": "^20.0.0",
+    "c8": "^8.0.0",
+    "jsdom": "^22.0.0",
+    "prettier": "^3.0.0",
     "remark-cli": "^11.0.0",
     "remark-preset-wooorm": "^9.0.0",
     "type-coverage": "^2.0.0",
     "typescript": "^5.0.0",
-    "xo": "^0.53.0"
+    "xo": "^0.55.0"
   },
   "scripts": {
     "prepack": "npm run build && npm run format",
     "build": "tsc --build --clean && tsc --build && type-coverage",
-    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "format": "remark . -qfo && prettier . -w --log-level warn && xo --fix",
     "test-browser": "node --conditions development --conditions browser -r ./test/dom.cjs test/index.js",
     "test-node": "node --conditions development test/index.js",
     "test-worker": "node --conditions development --conditions worker test/index.js",
