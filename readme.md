@@ -66,14 +66,14 @@ npm install hast-util-from-html-isomorphic
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {fromHtmlIsomorphic} from 'https://esm.sh/hast-util-from-html-isomorphic@1'
+import {fromHtmlIsomorphic} from 'https://esm.sh/hast-util-from-html-isomorphic@2'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {fromHtmlIsomorphic} from 'https://esm.sh/hast-util-from-html-isomorphic@1?bundle'
+  import {fromHtmlIsomorphic} from 'https://esm.sh/hast-util-from-html-isomorphic@2?bundle'
 </script>
 ```
 
